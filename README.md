@@ -12,7 +12,6 @@ A full-stack web application for managing British Auctions in a Request for Quot
   - Bid received in the last X minutes.
   - Any supplier rank change.
   - Lowest bidder (L1) change.
-- **Real-time Updates**: Socket.io integration for instant bid and timer updates.
 - **Supplier Rankings**: Automatic L1, L2, L3 ranking based on the lowest total price.
 - **Activity Log**: Detailed history of bid submissions and auction extensions.
 
