@@ -2,11 +2,6 @@
 
 A full-stack web application for managing British Auctions in a Request for Quotation (RFQ) system.
 
-### Component Breakdown
-1. **Frontend (React)**: Handles the UI, state management for live countdowns, and real-time bid updates via WebSockets.
-2. **Backend (Express)**: RESTful API for CRUD operations on RFQs and Bids. Houses the British Auction logic (extension checks).
-3. **Real-time Engine (Socket.io)**: Pushes updates to all active participants when bids are placed or auction times are extended.
-4. **Database (MySQL)**: Persistent storage for RFQs, configurations, bids, and audit logs.
 
 ---
 
