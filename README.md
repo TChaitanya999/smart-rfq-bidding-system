@@ -2,34 +2,6 @@
 
 A full-stack web application for managing British Auctions in a Request for Quotation (RFQ) system.
 
-
-### Architecture Diagram
-The system follows a classic 3-tier architecture with real-time capabilities:
-
-```mermaid
-graph TD
-    subgraph Client_Layer [Frontend: React]
-        UI[Dashboard / Details Page]
-        SocketClient[Socket.io Client]
-    end
-
-    subgraph API_Layer [Backend: Node.js / Express]
-        Router[Express Router]
-        Controllers[Business Logic / Controllers]
-        SocketServer[Socket.io Server]
-    end
-
-    subgraph Data_Layer [Database: MySQL]
-        DB[(MySQL Database)]
-    end
-
-    UI <--> Router
-    SocketClient <--> SocketServer
-    Router --> Controllers
-    Controllers <--> DB
-    Controllers --> SocketServer
-```
-
 ### Component Breakdown
 1. **Frontend (React)**: Handles the UI, state management for live countdowns, and real-time bid updates via WebSockets.
 2. **Backend (Express)**: RESTful API for CRUD operations on RFQs and Bids. Houses the British Auction logic (extension checks).
