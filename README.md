@@ -4,50 +4,6 @@ A full-stack web application for managing British Auctions in a Request for Quot
 
 ## High-Level Design (HLD)
 
-### Architecture Diagram
-The system follows a classic 3-tier architecture with real-time capabilities:
-
-```mermaid
-graph TD
-    subgraph Client_Layer [Frontend: React]
-        UI[Dashboard / Details Page]
-        SocketClient[Socket.io Client]
-    end
-
-    subgraph API_Layer [Backend: Node.js / Express]
-        Router[Express Router]
-        Controllers[Business Logic / Controllers]
-        SocketServer[Socket.io Server]
-    end
-
-    subgraph Data_Layer [Database: MySQL]
-        DB[(MySQL Database)]
-    end
-
-    UI <--> Router
-    SocketClient <--> SocketServer
-    Router --> Controllers
-    Controllers <--> DB
-    Controllers --> SocketServer
-```
-
-### Component Breakdown
-1. **Frontend (React)**: Handles the UI, state management for live countdowns, and real-time bid updates via WebSockets.
-2. **Backend (Express)**: RESTful API for CRUD operations on RFQs and Bids. Houses the British Auction logic (extension checks).
-3. **Real-time Engine (Socket.io)**: Pushes updates to all active participants when bids are placed or auction times are extended.
-4. **Database (MySQL)**: Persistent storage for RFQs, configurations, bids, and audit logs.
-
-## Schema Design
-
-The database is designed with normalized tables and foreign key relationships to ensure data integrity.
-
-### Tables:
-- **`rfqs`**: Stores core RFQ data (times, pickup dates, status).
-- **`suppliers`**: Stores carrier/supplier profile information.
-- **`bids`**: Records every bid with its breakdown (Freight, Origin, Destination charges). Includes an index on `(rfq_id, total_amount)` for fast ranking.
-- **`auction_config`**: Stores the specific British Auction parameters (X minutes window, Y minutes extension) for each RFQ.
-- **`activity_logs`**: An audit trail of all significant events (bid submissions, system-triggered extensions).
-
 ---
 
 ## Features
@@ -61,8 +17,8 @@ The database is designed with normalized tables and foreign key relationships to
 - **Activity Log**: Detailed history of bid submissions and auction extensions.
 
 ## Tech Stack
-- **Frontend**: React, Bootstrap, Lucide React, Socket.io-client, Axios.
-- **Backend**: Node.js, Express, Socket.io, MySQL, Moment.js.
+- **Frontend**: React, Bootstrap, Axios.
+- **Backend**: Node.js, Express.js.
 - **Database**: MySQL.
 
 ## Prerequisites
