@@ -68,6 +68,7 @@ graph TD
 ### 2. Backend Setup
 1. Navigate to the `backend` folder:
    ```bash
+   cd smart-rfq-bidding-system-main
    cd backend
    ```
 2. Install dependencies:
@@ -90,6 +91,7 @@ graph TD
 ### 3. Frontend Setup
 1. Navigate to the `frontend` folder:
    ```bash
+   cd smart-rfq-bidding-system-main
    cd frontend
    ```
 2. Install dependencies:
