@@ -2,7 +2,7 @@
 
 A full-stack web application for managing British Auctions in a Request for Quotation (RFQ) system.
 
-## High-Level Design (HLD)
+
 
 ---
 
